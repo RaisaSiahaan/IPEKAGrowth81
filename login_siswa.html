@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Login - IPEKA Character Champion</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{margin:0;background:#0f172a;color:#fff;font-family:Arial,sans-serif}
+.hidden{display:none}
+.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f172a,#1e3a8a)}
+.card-glass{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:25px;
+    padding:40px;
+    width:85%;
+    max-width:550px;
+	max-height:580px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+.logo-wrapper{
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.logo-circle{
+    width:100px;
+    height:100px;
+    background:#fff;
+    border-radius:50%;
+    border:5px solid #FFD54F;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+.logo{
+    width:80px;
+    height:auto;
+    margin-bottom:10px;
+    object-fit:contain;
+    display:block;
+}
+
+.title{
+    font-size:50px;
+    font-weight:800;
+    margin-top:10px;
+    margin-bottom:5px;
+    letter-spacing:2px;
+}
+
+.subtitle{
+    color:#FFD54F;
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+#typing{
+    color:#FFD54F;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.form-control{
+    height:52px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.btn-warning{
+    height:55px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+}
+.btn-outline-light{
+    height:55px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.btn-outline-light{
+    border:2px solid #ffffff;
+}
+
+.btn-outline-light:hover{
+    background:#ffffff;
+    color:#0f172a;
+}
+.navbar{background:#111827}
+.section{padding:20px}
+.cardx{background:#1e293b;padding:20px;border-radius:15px;margin-bottom:15px}
+
+#typing{
+
+    min-height:25px;
+    color:#ffc107;
+    margin-bottom:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loginPage" class="login-screen">
+<div class="card-glass text-center">
+<div class="logo-wrapper">
+    <div class="logo-circle">
+        <a href="index.html"><img src="logo.png" alt="Logo IPEKA" class="logo"></a>
+    </div>
+</div>
+
+<h1 class="title">
+    IPEKA
+</h1>
+<h2 class="subtitle">
+    🏆 Character Champion 🏆
+</h2>
+
+<p id="typing"></p>
+<input
+id="nis"
+class="form-control mb-2"
+placeholder="Masukkan NIS">
+
+<input
+id="nama"
+class="form-control mb-2"
+placeholder="Masukkan Nama Lengkap">
+
+<select
+id="kelas"
+class="form-control mb-3">
+
+<option value="">Pilih Kelas</option>
+<option value="8.1">8.1</option>
+<option value="8.2">8.2</option>
+<option value="8.3">8.3</option>
+</select>
+
+<div class="row mt-3">
+    <div class="col-6">
+        <button
+            class="btn btn-warning w-100"
+            onclick="window.location.href='index.html'">
+            🏠 Beranda
+        </button>
+    </div>
+    <div class="col-6">
+        <button
+            class="btn btn-warning w-100"
+            onclick="login()">
+            🚀 Enter My Journey
+        </button>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+
+//======================================
+// TYPING EFFECT
+//======================================
+const txt = "Attitude • Integrity • Responsibility • Excellence";
+let i = 0;
+function type(){
+    const typing = document.getElementById("typing");
+    if(!typing) return;
+    if(i < txt.length){
+        typing.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(type,60);
+    }
+}
+
+type();
+
+
+//======================================
+// APPS SCRIPT URL
+//======================================
+
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyTmIK_oQ2-6iaZBFPmJ62vnZuFFTXYwsgN7UFDqTlj_UFlDe3a1cxR9wYq-pMLNeqJhg/exec";
+
+//======================================
+// LOGIN SISWA
+//======================================
+
+async function login(){
+const nis=document.getElementById("nis").value.trim();
+const nama=document.getElementById("nama").value.trim();
+const kelas=document.getElementById("kelas").value;
+if(nis=="" || nama=="" || kelas==""){
+alert("Lengkapi NIS, Nama dan Kelas.");
+return;
+}
+try{
+
+const response=await fetch(
+SCRIPT_URL+
+"?action=login"+
+"&nis="+encodeURIComponent(nis)+
+"&nama="+encodeURIComponent(nama)+
+"&kelas="+encodeURIComponent(kelas)
+);
+
+const data=await response.json();
+
+if(data.status){
+
+    localStorage.setItem("nis", data.nis);
+    localStorage.setItem("nama", data.nama);
+    localStorage.setItem("kelas", data.kelas);
+    window.location.replace("dashboard.html");
+}else{
+    alert(data.message);
+}
+}catch(err){
+console.log(err);
+alert("Tidak dapat terhubung ke server.");
+}
+}
+
+//======================================
+// CEK LOGIN OTOMATIS
+//======================================
+window.addEventListener("load", function () {
+    // Jika sudah login, langsung ke dashboard
+    if (localStorage.getItem("nis")) {
+        window.location.replace("dashboard.html");
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Dashboard - IPEKA Character Champion</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+.navbar{
+    background:#111827;
+}
+
+.cardx{
+    background:#1e293b;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar navbar-dark">
+<div class="container">
+<span class="navbar-brand">
+🏆 IPEKA Character Champion
+</span>
+
+<button class="btn btn-warning" onclick="logout()">
+    Logout
+</button>
+</div>
+</nav>
+
+
+<div class="container mt-4">
+<div class="cardx">
+<h2 id="welcome"></h2>
+<p id="kelas"></p>
+</div>
+
+
+<div class="cardx">
+<h3>Champion Agreement</h3>
+<ul>
+<li>Datang tepat waktu</li>
+<li>Menghormati guru dan teman</li>
+<li>Bertanggung jawab</li>
+<li>Menjaga kebersihan</li>
+<li>Melakukan yang terbaik</li>
+</ul>
+</div>
+
+
+<div class="cardx">
+<h3>ASSESSMENT AWAL</h3>
+<h4>A. DATA DIRI (DP)</h4>
+<p>1. Saya mudah merasa cemas</p>
+<label>
+<input type="radio" name="q1">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q1">
+Tidak
+</label>
+
+<hr>
+<p>2. Saya kurang percaya diri</p>
+<label>
+<input type="radio" name="q2">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q2">
+Tidak
+</label>
+
+<hr>
+<p>3. Saya sulit mengendalikan emosi</p>
+<label>
+<input type="radio" name="q3">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q3">
+Tidak
+</label>
+
+<hr>
+<p>4. Saya sering merasa sedih</p>
+<label>
+<input type="radio" name="q4">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q4">
+Tidak
+</label>
+
+<hr>
+<p>5. Saya mudah putus asa</p>
+<label>
+<input type="radio" name="q5">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q5">
+Tidak
+</label></div>
+
+<div class="cardx">
+<h4>B. HUBUNGAN SOSIAL (HSO)</h4>
+<p>1. Saya sulit bergaul dengan teman</p>
+<label>
+<input type="radio" name="q6">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q6">
+Tidak
+</label>
+
+<hr>
+<p>2. Saya sering bertengkar dengan teman</p>
+<label>
+<input type="radio" name="q7">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q7">
+Tidak
+</label>
+
+<hr>
+<p>3. Saya merasa dikucilkan</p>
+<label>
+<input type="radio" name="q8">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q8">
+Tidak
+</label>
+
+<hr>
+<p>4. Saya sulit bekerja sama dalam kelompok</p>
+<label>
+<input type="radio" name="q9">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q9">
+Tidak
+</label>
+
+<hr>
+<p>5. Saya kurang menghargai pendapat orang lain</p>
+<label>
+<input type="radio" name="q10">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q10">
+Tidak
+</label></div>
+
+<div class="cardx">
+<h4>C. PENDIDIKAN DAN PELAJARAN (PDP)</h4>
+<p>1. Saya kesulitan memahami pelajaran</p>
+<label>
+<input type="radio" name="q11">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q11">
+Tidak
+</label>
+
+<hr>
+<p>2. Saya malas belajar</p>
+<label>
+<input type="radio" name="q12">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q12">
+Tidak
+</label>
+
+<hr>
+<p>3. Saya sering tidak mengerjakan tugas</p>
+<label>
+<input type="radio" name="q13">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q13">
+Tidak
+</label>
+
+<hr>
+<p>4. Nilai pelajaran saya menurun</p>
+<label>
+<input type="radio" name="q14">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q14">
+Tidak
+</label>
+
+<hr>
+<p>5. Saya sulit berkonsentrasi saat belajar</p>
+<label>
+<input type="radio" name="q15">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q15">
+Tidak
+</label></div>
+
+<div class="cardx">
+<h4>D. KEADAAN DAN HUBUNGAN KELUARGA (KHK)</h4>
+<p>1. Saya jarang komunikasi dengan orangtua</p>
+<label>
+<input type="radio" name="q16">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q16">
+Tidak
+</label>
+
+<hr>
+<p>2. Saya sering bertengkar dengan keluarga</p>
+<label>
+<input type="radio" name="q17">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q17">
+Tidak
+</label>
+
+<hr>
+<p>3. Suasana rumah kurang nyaman</p>
+<label>
+<input type="radio" name="q18">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q18">
+Tidak
+</label>
+
+<hr>
+<p>4. Orangtua kurang memperhatikan saya</p>
+<label>
+<input type="radio" name="q19">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q19">
+Tidak
+</label>
+
+<hr>
+<p>5. Saya merasa tidak bahagia di rumah</p>
+<label>
+<input type="radio" name="q20">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q20">
+Tidak
+</label></div>
+
+<div class="cardx">
+<h4>E. KARIR DAN PEKERJAAN (KDP)</h4>
+<p>1. Saya belum memiliki cita-cita yang jelas</p>
+<label>
+<input type="radio" name="q21">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q21">
+Tidak
+</label>
+
+<hr>
+<p>2. Saya bingung memilih jurusan</p>
+<label>
+<input type="radio" name="q22">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q22">
+Tidak
+</label>
+
+<hr>
+<p>3. Saya belum mengetahui potensi diri</p>
+<label>
+<input type="radio" name="q23">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q23">
+Tidak
+</label>
+
+<hr>
+<p>4. Saya kurang informasi tentang dunia kerja</p>
+<label>
+<input type="radio" name="q24">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q24">
+Tidak
+</label>
+
+<hr>
+<p>5. Saya khawatir terhadap masa depan</p>
+<label>
+<input type="radio" name="q25">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q25">
+Tidak
+</label></div>
+
+<div class="cardx">
+<h3>F. Mengenal diri</h3>
+<div class="mb-4">
+<label>
+1. Siapa nama panggilan yang kamu sukai?
+</label>
+<textarea id="essay1" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Ceritakan tiga hal menarik tentang dirimu!
+</label>
+<textarea id="essay2" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Apa cita-citamu? Mengapa memilih cita-cita tersebut?
+</label>
+<textarea id="essay3" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+4. Hal apa yang paling membuatmu bangga?
+</label>
+<textarea id="essay4" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+5. Apa kelebihan yang kamu miliki?
+</label>
+<textarea id="essay5" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+6. Hal apa yang ingin kamu perbaiki dari dirimu?
+</label>
+<textarea id="essay6" class="form-control" rows="5"></textarea></div></div>
+
+<div class="cardx">
+<h3>G. Pengalaman belajar</h3>
+<div class="mb-4">
+<label>
+1. Mata pelajaran apa yang paling kamu sukai? Mengapa?
+</label>
+<textarea id="essay7" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Mata pelajaran apa yang menurutmu paling menantang?
+</label>
+<textarea id="essay8" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Bagaimana cara belajar yang paling cocok untukmu? Mendengarkan penjelasan, Membaca, Menonton Video, Praktik langsung, Diskusi kelompok?
+</label>
+<textarea id="essay9" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+4. Saat tidak paham pelajaran, biasanya apa yang kamu lakukan?
+</label>
+<textarea id="essay10" class="form-control" rows="5"></textarea></div>
+</div>
+
+<div class="cardx">
+<h3>H. Minat dan Bakat</h3>
+<div class="mb-4">
+<label>
+1. Apa hobi yang paling sering kamu lakukan?
+</label>
+<textarea id="essay11" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Kegiatan ekstrakurikuler apa yang ingin kamu ikuti?
+</label>
+<textarea id="essay12" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Prestasi apa yang pernah kamu raih?
+</label>
+<textarea id="essay13" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+4. Keterampilan apa yang ingin kamu pelajari di SMP?
+</label>
+<textarea id="essay14" class="form-control" rows="5"></textarea></div>
+</div>
+
+<div class="cardx">
+<h3>I. Sosial emosional</h3>
+<div class="mb-4">
+<label>
+1. Bagaimana perasaanmu memasuki kelas baru?
+</label>
+<textarea id="essay15" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Apa yang membuatmu bersemangat datang ke sekolah?
+</label>
+<textarea id="essay16" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Apa yang paling kamu khawatirkan di kelas baru?
+</label>
+<textarea id="essay17" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+4. Ketika memiliki masalah dengan teman, biasanya apa yang kamu lakukan?
+</label>
+<textarea id="essay18" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+5. Siapa orang yang paling sering kamu ajak bercerita?
+</label>
+<textarea id="essay19" class="form-control" rows="5"></textarea></div>
+</div>
+
+<div class="cardx">
+<h3>J. Kebiasaan belajar</h3>
+<div class="mb-4">
+<label>
+1. Berapa lama biasanya kamu belajar di rumah setiap harinya?
+</label>
+<textarea id="essay20" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Siapa yang biasanya mendampingimu belajar?
+</label>
+<textarea id="essay21" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Apakah kamu memiliki jadwal belajar di rumah?
+</label>
+<textarea id="essay22" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+4. Apa yang sering menganggu konsentrasimu saat belajar?
+</label>
+<textarea id="essay23" class="form-control" rows="5"></textarea></div>
+</div>
+
+<div class="cardx">
+<h3>K. Literasi digital</h3>
+<div class="mb-4">
+<label>
+1. Apakah kamu memiliki telepon genggam sendiri?
+</label>
+<textarea id="essay24" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Berapa lama kamu menggunakan internet setiap hari?
+</label>
+<textarea id="essay25" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Apa aplikasi yang paling sering kami gunakan?
+</label>
+<textarea id="essay26" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+4. Pernahkan kamu menggunakan internet untuk belajar? Contohnya apa?
+</label>
+<textarea id="essay27" class="form-control" rows="5"></textarea></div>
+</div>
+
+<div class="cardx">
+<h3>L. Harapan</h3>
+<div class="mb-4">
+<label>
+1. Hai apa yang ingin kamu capai selama belajar di SMP?
+</label>
+<textarea id="essay28" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+2. Guru seperti apa yang membuatmu nyaman belajar?
+</label>
+<textarea id="essay29" class="form-control" rows="5"></textarea></div>
+
+<div class="mb-4">
+<label>
+3. Jika boleh memberi pesan kepada gurumu, apa yang ingin kamu sampaikan?
+</label>
+<textarea id="essay30" class="form-control" rows="5"></textarea></div></div>
+
+<div class="cardx">
+<h4>M. DATA DIRI (DP)</h4>
+<div class="mb-4">
+<label>
+1. Siapa nama lengkap Ayah/Ibu/Wali?
+</label>
+<textarea id="essay31" class="form-control" rows="5"></textarea></div>
+<div class="mb-4">
+<label>
+2. Apa pekerjaan utama Ayah/Ibu/Wali saat ini?
+</label>
+<textarea id="essay32" class="form-control" rows="5"></textarea></div>
+<hr>
+<div class="mb-4">
+<p>3. Bagaimana status pola asuhmu saat ini?</p>
+<label>
+<input type="radio" name="q26">
+Tinggal bersama orang tua kandung (lengkap)
+</label><br>
+<label>
+<input type="radio" name="q26">
+Tinggal bersama salah satu orang tua (Single parent)
+</label><br>
+<label>
+<input type="radio" name="q26">
+Tinggal bersama kakek/nenek/saudara
+</label>
+</div></div>
+
+<div class="cardx">
+<h4>N. Lingkungan & Fasilitas Belajar di Rumah</h4>
+<hr>
+<p>1. Apakah kamu memiliki ruang atau meja belajar khusus di rumah?</p>
+<label>
+<input type="radio" name="q27">
+Ya
+</label>
+<label class="ms-3">
+<input type="radio" name="q27">
+Tidak
+</label>
+
+<hr>
+<p>2. Bagaimana fasilitas internet yang kamu gunakan di rumah?</p>
+<label>
+<input type="radio" name="q28">
+Kuota HP 
+</label>
+<label class="ms-3">
+<input type="radio" name="q28">
+Wifi Rumah
+</label><br><br>
+<div class="mb-4">
+<label>
+3. Berapa lama rata-rata kamu didampingi belajar oleh orang tua dalam seminggu?
+</label>
+<textarea id="essay33" class="form-control" rows="5"></textarea></div>
+</div>
+
+<div class="cardx">
+<h4>O. Kondisi Kesehatan & Khusus</h4>
+<hr>
+<div class="mb-4">
+<label>
+1. Apakah kamu memiliki riwayat penyakit kronis, alergi, atau cedera yang memerlukan perhatian khusus sekolah? Jika ya, mohon sebutkan.
+</label>
+<textarea id="essay34" class="form-control" rows="5"></textarea></div>
+<div class="mb-4">
+<label>
+2. Apakah kamu memiliki kecenderungan khusus saat belajar? (Misal: Harus membaca keras-keras, cepat bosan, atau sering mengeluh pusing saat melihat tulisan)
+</label>
+<textarea id="essay35" class="form-control" rows="5"></textarea></div>
+</div>
+<hr>
+<button
+class="btn btn-primary"
+onclick="submitAssessment()">
+Kirim Assessment
+</button><br><br><br>
+</div>
+
+<div class="cardx">
+<h3>Daily Reflection</h3>
+<p id="waktu"></p>
+<label>
+<input type="checkbox">
+Datang tepat waktu
+</label>
+<br>
+<label>
+<input type="checkbox">
+Menghormati guru
+</label>
+<br>
+<label>
+<input type="checkbox">
+Menghormati teman
+</label>
+<br><br>
+
+<textarea
+class="form-control"
+placeholder="Refleksi hari ini"></textarea>
+<button
+class="btn btn-success mt-3">
+Submit
+</button>
+</div>
+</div>
+
+<script>
+window.onload=function(){
+
+document.getElementById("welcome").innerHTML=
+"Selamat datang, "+localStorage.getItem("nama");
+
+document.getElementById("kelas").innerHTML=
+"NIS : "+localStorage.getItem("nis")+
+"<br>Kelas : "+localStorage.getItem("kelas");
+clock();
+}
+//======================================
+// CEK LOGIN
+//======================================
+if(
+    !localStorage.getItem("nis") ||
+    !localStorage.getItem("nama") ||
+    !localStorage.getItem("kelas")
+){
+    window.location.replace("login_siswa.html");
+}
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbyTmIK_oQ2-6iaZBFPmJ62vnZuFFTXYwsgN7UFDqTlj_UFlDe3a1cxR9wYq-pMLNeqJhg/exec";
+async function submitAssessment(){
+const data={
+action:"assessment",
+nis:localStorage.getItem("nis"),
+nama:localStorage.getItem("nama"),
+kelas:localStorage.getItem("kelas"),
+q1:getAnswer("q1"),
+q2:getAnswer("q2"),
+q3:getAnswer("q3"),
+q4:getAnswer("q4"),
+q5:getAnswer("q5"),
+q6:getAnswer("q6"),
+q7:getAnswer("q7"),
+q8:getAnswer("q8"),
+q9:getAnswer("q9"),
+q10:getAnswer("q10"),
+q11:getAnswer("q11"),
+q12:getAnswer("q12"),
+q13:getAnswer("q13"),
+q14:getAnswer("q14"),
+q15:getAnswer("q15"),
+q16:getAnswer("q16"),
+q17:getAnswer("q17"),
+q18:getAnswer("q18"),
+q19:getAnswer("q19"),
+q20:getAnswer("q20"),
+q21:getAnswer("q21"),
+q22:getAnswer("q22"),
+q23:getAnswer("q23"),
+q24:getAnswer("q24"),
+q25:getAnswer("q25"),
+q26:getAnswer("q26"),
+q27:getAnswer("q27"),
+q28:getAnswer("q28"),
+essay1:document.getElementById("essay1").value,
+essay2:document.getElementById("essay2").value,
+essay3:document.getElementById("essay3").value,
+essay4:document.getElementById("essay4").value,
+essay5:document.getElementById("essay5").value,
+essay6:document.getElementById("essay6").value,
+essay7:document.getElementById("essay7").value,
+essay8:document.getElementById("essay8").value,
+essay9:document.getElementById("essay9").value,
+essay10:document.getElementById("essay10").value,
+essay11:document.getElementById("essay11").value,
+essay12:document.getElementById("essay12").value,
+essay13:document.getElementById("essay13").value,
+essay14:document.getElementById("essay14").value,
+essay15:document.getElementById("essay15").value,
+essay16:document.getElementById("essay16").value,
+essay17:document.getElementById("essay17").value,
+essay18:document.getElementById("essay18").value,
+essay19:document.getElementById("essay19").value,
+essay20:document.getElementById("essay20").value,
+essay21:document.getElementById("essay21").value,
+essay22:document.getElementById("essay22").value,
+essay23:document.getElementById("essay23").value,
+essay24:document.getElementById("essay24").value,
+essay25:document.getElementById("essay25").value,
+essay26:document.getElementById("essay26").value,
+essay27:document.getElementById("essay27").value,
+essay28:document.getElementById("essay28").value,
+essay29:document.getElementById("essay29").value,
+essay30:document.getElementById("essay30").value,
+essay31:document.getElementById("essay31").value,
+essay32:document.getElementById("essay32").value,
+essay33:document.getElementById("essay33").value,
+essay34:document.getElementById("essay34").value,
+essay35:document.getElementById("essay35").value
+};
+const response = await fetch("https://script.google.com/macros/s/AKfycbyTmIK_oQ2-6iaZBFPmJ62vnZuFFTXYwsgN7UFDqTlj_UFlDe3a1cxR9wYq-pMLNeqJhg/exec",{
+    method:"POST",
+    body:JSON.stringify(data)
+});
+const hasil = await response.json();
+alert(hasil.message);
+}
+function logout(){
+    alert("Logout berhasil dipanggil");
+    localStorage.removeItem("nis");
+    localStorage.removeItem("nama");
+    localStorage.removeItem("kelas");
+    window.location.href="login_siswa.html";
+}
+function logout(){
+    const yakin = confirm("Apakah Anda yakin ingin logout?");
+    if(!yakin) return;
+    localStorage.removeItem("nis");
+    localStorage.removeItem("nama");
+    localStorage.removeItem("kelas");
+    window.location.href = "login_siswa.html";
+}
+function getAnswer(name){
+    const radio=document.querySelector(
+        'input[name="'+name+'"]:checked'
+    );
+    return radio ? radio.parentNode.textContent.trim() : "";
+}
+function clock(){
+document.getElementById("waktu").innerHTML=
+new Date().toLocaleString("id-ID");
+}
+setInterval(clock,1000);
+clock();
+</script>
+</body>
+</html>

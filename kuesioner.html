@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuesioner Orang Tua - IPEKA</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{background:#0f172a;color:#fff;font-family:Segoe UI,sans-serif}
+.cardx{background:#1e293b;border-radius:16px;padding:20px;margin-top:40px;margin-bottom:40px}
+.navbar{background:#111827}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">🏆 IPEKA Character Champion</a>
+<div>
+<button class="btn btn-outline-warning" onclick="window.location.href='index.html'">Kembali ke Beranda</button>
+</div>
+</div>
+</nav>
+
+<div class="container">
+  <div class="cardx">
+    <h2 class="text-warning text-center mb-1">LEMBAR KUESIONER ORANG TUA</h2>
+    <p class="text-center text-muted mb-4">Pertemuan Tatap Muka (PTM) Menggali Kondisi Anak & Perkembangan di Rumah</p>
+    
+    <form id="formKuesionerOT">
+      <div class="row g-3 mb-4">
+        <div class="col-md-6">
+  <label class="form-label">Nama Anak</label>
+  <select class="form-select bg-dark text-white border-secondary" name="nama_anak" required>
+    <option value="" disabled selected>-- Pilih Nama Anak --</option>
+    <option value="Adalynn Rose Agustian">1. Adalynn Rose Agustian</option>
+    <option value="Austin Sheldon Tariono">2. Austin Sheldon Tariono</option>
+    <option value="Beryl Esthera Jioe">3. Beryl Esthera Jioe</option>
+    <option value="Callysta Priscilia Djohan">4. Callysta Priscilia Djohan</option>
+    <option value="Christabel Faith Taarea">5. Christabel Faith Taarea</option>
+    <option value="Constantine Clark Wijaya">6. Constantine Clark Wijaya</option>
+    <option value="Darren Salim">7. Darren Salim</option>
+    <option value="Darryck Hamilton">8. Darryck Hamilton</option>
+    <option value="Devillynz">9. Devillynz</option>
+    <option value="Evan Fidelis Susanto">10. Evan Fidelis Susanto</option>
+    <option value="Felicia Angkawijaya">11. Felicia Angkawijaya</option>
+    <option value="Gareth Clay Christenssen Saragih">12. Gareth Clay Christenssen Saragih</option>
+    <option value="Gelsey Bevelyn Patrisha">13. Gelsey Bevelyn Patrisha</option>
+    <option value="Genevieve Mischa Sutanto">14. Genevieve Mischa Sutanto</option>
+    <option value="Jacinda Tio">15. Jacinda Tio</option>
+    <option value="Jeremy Orlando Moe">16. Jeremy Orlando Moe</option>
+    <option value="Jesse Letizia Tan">17. Jesse Letizia Tan</option>
+    <option value="Joshua Cruz Sitanggang">18. Joshua Cruz Sitanggang</option>
+    <option value="Jovan Lewis Dilbert">19. Jovan Lewis Dilbert</option>
+    <option value="Kaley Claire Kurniawan">20. Kaley Claire Kurniawan</option>
+    <option value="Kayleen Hyori Lee">21. Kayleen Hyori Lee</option>
+    <option value="Kimberly Chin">22. Kimberly Chin</option>
+    <option value="Kinsey Allyriane Lobian">23. Kinsey Allyriane Lobian</option>
+    <option value="Metvis Caprie">24. Metvis Caprie</option>
+    <option value="Nathanael Wilson Sutanto">25. Nathanael Wilson Sutanto</option>
+    <option value="Olivia Wangsaatmadja">26. Olivia Wangsaatmadja</option>
+    <option value="Raphael Rhei Hendra">27. Raphael Rhei Hendra</option>
+    <option value="Regine Christie Verrandy">28. Regine Christie Verrandy</option>
+    <option value="Renatha Vienna Tiono">29. Renatha Vienna Tiono</option>
+    <option value="Roxanne Kimberly Tan">30. Roxanne Kimberly Tan</option>
+    <option value="Ryu Kenzie Setiawan">31. Ryu Kenzie Setiawan</option>
+    <option value="Skye Frances Nuralam">32. Skye Frances Nuralam</option>
+    <option value="Verlynncia Chryslene Widjaja">33. Verlynncia Chryslene Widjaja</option>
+    <option value="Zoe Dominatrix Tjhia">34. Zoe Dominatrix Tjhia</option>
+  </select>
+</div>
+        <div class="col-md-6">
+          <label class="form-label">Kelas / No. Absen</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" name="kelas_absen" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Nama Orang Tua</label>
+          <input type="text" class="form-control bg-dark text-white border-secondary" name="nama_ortu" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Tanggal PTM</label>
+          <input type="date" class="form-control bg-dark text-white border-secondary" name="tanggal_ptm" required>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4">
+      <h4 class="text-warning mb-3">1. KONDISI EMOSIONAL & KARAKTER ANAK DI RUMAH</h4>
+      <div class="mb-4">
+        <label class="form-label">1. "Kalau di rumah, biasanya momen apa yang paling bikin anak antusias atau cerita panjang lebar ke Bapak/Ibu?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q1" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label">2. "Ketika anak lagi merasa kesal atau mood-nya kurang baik di rumah, biasanya apa yang paling ampuh buat menenangkan dia?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q2" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label">3. "Apakah ada perubahan sikap atau kebiasaan yang cukup mencolok dari anak di rumah akhir-akhir ini?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q3" required></textarea>
+      </div>
+
+      <hr class="border-secondary my-4">
+      <h4 class="text-warning mb-3">2. AKTIVITAS & HUBUNGAN KELUARGA</h4>
+      <div class="mb-4">
+        <label class="form-label">4. "Biasanya kalau sepulang sekolah atau saat akhir pekan, kegiatan apa yang paling sering dilakukan bersama-sama di rumah?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q4" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label">5. "Bagaimana biasanya cara anak meminta izin atau mengomunikasikan keinginannya yang kuat kepada Bapak/Ibu?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q5" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label">6. "Ketika anak melakukan kesalahan di rumah, bagaimana biasanya langkah yang diambil agar dia paham kesalahannya?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q6" required></textarea>
+      </div>
+
+      <hr class="border-secondary my-4">
+      <h4 class="text-warning mb-3">3. DUKUNGAN BELAJAR & KEMANDIRIAN SISWA</h4>
+      <div class="mb-4">
+        <label class="form-label">7. "Kalau di rumah, proses pengerjaan tugas sekolah biasanya inisiatif dari anaknya sendiri atau perlu sering diingatkan?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q7" required></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label">8. "Bagaimana reaksi anak kalau dia menemui kesulitan saat belajar? Apakah langsung minta bantuan atau dicoba dulu sendiri?"</label>
+        <textarea class="form-control bg-dark text-white border-secondary" rows="3" name="q8" required></textarea>
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="fst-italic text-muted">"Terima kasih atas waktu dan kerja sama Bapak/Ibu dalam mendukung tumbuh kembang anak yang optimal!"</p>
+        <button type="submit" class="btn btn-warning btn-lg px-5">Kirim Kuesioner</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzTAmwd-geStbcQFhXPzRhGXGqJa2an1k8aYnSuPngpXYH3NGXzQDAGrZsHjZ9tJH3gQ/exec";
+
+document.getElementById('formKuesionerOT').addEventListener('submit', async function(e) {
+  e.preventDefault(); // Mengunci halaman agar tidak reload / lompat halaman
+  
+  const submitBtn = this.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Mengirim...";
+
+  const formData = new FormData(this);
+  const payload = Object.fromEntries(formData.entries());
+  payload.action = "kuesioner_ortu";
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify(payload)
+    });
+    
+    alert("Terima kasih! Kuesioner berhasil dikirim dan disimpan.");
+    this.reset(); // Hanya membersihkan isian form tanpa pindah halaman
+
+  } catch (err) {
+    console.error(err);
+    alert("Terjadi kesalahan sistem, silakan coba lagi.");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Kirim Kuesioner";
+  }
+});
+</script>
+</body>
+</html>
